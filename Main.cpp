@@ -66,18 +66,26 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreveInstance, LPSTR lpCmdLin
 			shuri_G();
 
 			/* keibi operation */
-			keibi_calc();
+			phase = keibi_calc();
 			keibi_G();
 
 			/* player operation */
 			player_calc();
 			player_G();
 
-			/* last process (back menu) */
-			if (CheckHitKey(KEY_INPUT_ESCAPE)) {
-				phase = TITLE;
-			}
-		}			   
+		}
+		if (phase == OVER) {
+			map_G();
+			shuri_G();
+			keibi_G();
+			player_G();
+		}
+		/* last process (back menu) */
+		if (CheckHitKey(KEY_INPUT_ESCAPE)) {
+			phase = TITLE;
+			human_clock = 0;
+			map_ini();
+		}
 	}
 	DxLib_End(); // lDXƒ‰ƒCƒuƒ‰ƒŠI—¹ˆ—
 	return 0;

@@ -16,7 +16,7 @@ void player_calc();
 
 //keibi
 void keibi_G();
-void keibi_calc();
+char keibi_calc();
 
 //shuri
 void shuri_G();

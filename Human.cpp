@@ -193,7 +193,7 @@ void keibi_G() {
 	}
 }
 
-void keibi_calc() {
+char keibi_calc() {
 	int i;
 	int direc;
 	for (i = 0; i < keibi_num; i++) {
@@ -208,8 +208,21 @@ void keibi_calc() {
 					(keibi + i)->vec_a.reverse = TRUE;
 				}
 			}
+			else {
+				return OVER;
+			}
+
+			//walking
+			keibi_ite = (keibi_ite + 1) % 40;
+			if (keibi_ite <= 20) {
+				(keibi + i)->vec_a.state = 0;
+			}
+			else {
+				(keibi + i)->vec_a.state = 1;
+			}
 		}
 	}
+	return STAGE;
 }
 
 void shuri_G() {

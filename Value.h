@@ -112,7 +112,8 @@ extern int shuri_ite;
 enum 
 {
 	TITLE,
-	STAGE
+	STAGE,
+	OVER
 };
 
 #endif
