@@ -65,6 +65,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreveInstance, LPSTR lpCmdLin
 			shuri_calc();
 			shuri_G();
 
+			/* keibi operation */
+			keibi_calc();
+			keibi_G();
+
 			/* player operation */
 			player_calc();
 			player_G();

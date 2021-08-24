@@ -22,5 +22,8 @@ void keibi_calc();
 void shuri_G();
 void shuri_calc();
 
+//summery
+void DrawGraphBoolTurn(int, int, int, char);
+
 #endif // !HUMAN_H
 

@@ -1,6 +1,7 @@
 #include"Value.h"
 #include"DxLib.h"
 #include"Map.h"
+#include"Human.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -46,8 +47,8 @@ void human_ini() {
 	/***** keibi ******/
 	//image
 	keibi_num = 2;
-	keibi_i.walk[0] = LoadGraph("image/human/keibi_2.png");
-	keibi_i.walk[1] = LoadGraph("image/human/keibi_2.png");
+	keibi_i.walk[0] = LoadGraph("image/human/left_keibi_2.png");
+	keibi_i.walk[1] = LoadGraph("image/human/left_keibi_1.png");
 	keibi_i.doing = LoadGraph("image/human/do_keibi.png");
 	keibi_i.arrest = LoadGraph("image/human/left_keibi_arrest.png");
 	if ((keibi = (KEIBI*)malloc(sizeof(KEIBI) * keibi_num)) == NULL)
@@ -191,7 +192,10 @@ void player_calc() {
 }
 
 void keibi_G() {
-
+	int i;
+	for (i = 0; i < keibi_num; i++) {
+		DrawGraphBoolTurn((keibi + i)->vec_a.x, (keibi + i)->vec_a.y, keibi_i.walk[((keibi + i)->vec_a.state)], (keibi + i)->vec_a.reverse);
+	}
 }
 
 void keibi_calc() {
@@ -201,12 +205,7 @@ void keibi_calc() {
 void shuri_G() {
 	int i;
 	for (i = 0; i < shuri_num; i++) {
-		if ((shuri + i)->vec_a.reverse) {
-			DrawTurnGraph((shuri + i)->vec_a.x, (shuri + i)->vec_a.y, shuri_i.walk[((shuri + i)->vec_a.state)], TRUE);
-		}
-		else {
-			DrawGraph((shuri + i)->vec_a.x, (shuri + i)->vec_a.y, shuri_i.walk[((shuri + i)->vec_a.state)], TRUE);
-		}
+		DrawGraphBoolTurn((shuri + i)->vec_a.x, (shuri + i)->vec_a.y, shuri_i.walk[((shuri + i)->vec_a.state)], (shuri + i)->vec_a.reverse);
 	}
 }
 
@@ -277,4 +276,13 @@ void shuri_calc() {
 
 	}
 	
+}
+
+void DrawGraphBoolTurn(int x, int y, int image, char boolean) {
+	if (boolean) {
+		DrawTurnGraph(x, y, image, TRUE);
+	}
+	else {
+		DrawGraph(x, y, image, TRUE);
+	}
 }
