@@ -56,7 +56,7 @@ void human_ini() {
 	
 	for (i = 0; i < keibi_num; i++) {
 		(keibi + i)->vec_a.reverse = FALSE;
-		(keibi + i)->vec_a.velocity = 5;
+		(keibi + i)->vec_a.velocity = 3;
 		(keibi + i)->vec_a.x = 1024 - (i+1) * 192;
 		(keibi + i)->vec_a.y = 128 + i * 192 * 2;
 		(keibi + i)->vec_a.state = 0;
@@ -84,12 +84,7 @@ void human_ini() {
 
 void player_G() {
 	if (0 <= player_ite && player_ite < 20) {
-		if (player.vec_a.reverse) {
-			DrawTurnGraph(player.vec_a.x, player.vec_a.y, player.walk[player.vec_a.state], TRUE);
-		}
-		else {
-			DrawGraph(player.vec_a.x, player.vec_a.y, player.walk[player.vec_a.state], TRUE);
-		}
+		DrawGraphBoolTurn(player.vec_a.x, player.vec_a.y, player.walk[player.vec_a.state], player.vec_a.reverse);
 	}
 	else if (30 < player_ite && player_ite <= 50) {
 		DrawGraph(player.vec_a.x, player.vec_a.y, player.doing[player.vec_a.state], TRUE);
@@ -199,7 +194,22 @@ void keibi_G() {
 }
 
 void keibi_calc() {
-
+	int i;
+	int direc;
+	for (i = 0; i < keibi_num; i++) {
+		if ((keibi + i)->vec_a.y == player.vec_a.y) {
+			if ((player.vec_a.x - (keibi + i)->vec_a.x) != 0) {
+				direc = (player.vec_a.x - (keibi + i)->vec_a.x) / abs(player.vec_a.x - (keibi + i)->vec_a.x);
+				(keibi + i)->vec_a.x += direc * (keibi + i)->vec_a.velocity;
+				if (direc < 0) {
+					(keibi + i)->vec_a.reverse = FALSE;
+				}
+				else {
+					(keibi + i)->vec_a.reverse = TRUE;
+				}
+			}
+		}
+	}
 }
 
 void shuri_G() {
