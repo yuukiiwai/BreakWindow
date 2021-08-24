@@ -5,10 +5,18 @@
 #include <stdlib.h>
 #include <time.h>
 
+// player ini
 PLAYER player;
 int player_ite;
 int player_clock;
 
+// keibi ini
+KEIBI_IMAGE keibi_i;
+KEIBI* keibi;
+int keibi_ite;
+char keibi_num;
+
+// shuri ini
 SHURI_IMAGE shuri_i;
 SHURI* shuri;
 int shuri_ite;
@@ -18,22 +26,41 @@ void human_ini() {
 	int i;
 
 	/***** player *****/
+	//image
 	player.walk[0] = LoadGraph("image/human/left_gakusei_2.png");
 	player.walk[1] = LoadGraph("image/human/left_gakusei_1.png");
 	player.doing[0] = LoadGraph("image/human/do_gakusei_back1.png");
 	player.doing[1] = LoadGraph("image/human/do_gakusei_back2.png");
 	player.arrest = LoadGraph("imageg/human/left_gakusei_arrest.png");
+	//vec+
 	player.vec_a.reverse = FALSE;
 	player.vec_a.velocity = 5;
 	player.vec_a.x = 0;
 	player.vec_a.y = 704;
 	player.vec_a.state = 0;
+	//state
 	player.arrestF = player.doingF = 0;
-
+	//iterator
 	player_ite = 0;
 
 	/***** keibi ******/
-
+	//image
+	keibi_num = 2;
+	keibi_i.walk[0] = LoadGraph("image/human/keibi_2.png");
+	keibi_i.walk[1] = LoadGraph("image/human/keibi_2.png");
+	keibi_i.doing = LoadGraph("image/human/do_keibi.png");
+	keibi_i.arrest = LoadGraph("image/human/left_keibi_arrest.png");
+	if ((keibi = (KEIBI*)malloc(sizeof(KEIBI) * keibi_num)) == NULL)
+		exit(1);
+	
+	for (i = 0; i < keibi_num; i++) {
+		(keibi + i)->vec_a.reverse = FALSE;
+		(keibi + i)->vec_a.velocity = 5;
+		(keibi + i)->vec_a.x = 1024 - (i+1) * 192;
+		(keibi + i)->vec_a.y = 128 + i * 192 * 2;
+		(keibi + i)->vec_a.state = 0;
+		(keibi + i)->keibi_clock = 0;
+	}
 
 	/***** shuri ******/
 	shuri_num = 4;
@@ -41,7 +68,8 @@ void human_ini() {
 	shuri_i.walk[0] = LoadGraph("image/human/left_shuri_2.png");
 	shuri_i.walk[1] = LoadGraph("image/human/left_shuri_1.png");
 	
-	shuri = (SHURI*)malloc(sizeof(SHURI) * shuri_num);
+	if ((shuri = (SHURI*)malloc(sizeof(SHURI) * shuri_num)) == NULL)
+		exit(1);
 	for (i = 0; i < shuri_num; i++) {
 		(shuri + i)->vec_a.reverse = FALSE;
 		(shuri + i)->vec_a.velocity = 1;

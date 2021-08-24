@@ -71,7 +71,7 @@ typedef struct SHURI_IMAGE
 typedef struct SHURI
 {
 	HUMAN vec_a;	//向き速さ位置
-	char floor;		//存在する階層はチェックし終えたか
+	char floor;		//存在する階層はチェックし終えたか //現在使われていない
 	int shuri_clock;//human_clockと同期
 	char doingF;	//doingフラグ
 };

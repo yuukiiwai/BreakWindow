@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\image">
+      <UniqueIdentifier>{2efecbb1-ee3a-47fc-ab2b-06791e9a02b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\image\human">
+      <UniqueIdentifier>{56ae7379-8137-46a8-aa97-d412fd00f75f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\image\map">
+      <UniqueIdentifier>{804e380f-9cc1-4969-8a28-0aac84a931ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\image\title">
+      <UniqueIdentifier>{82500937-8c5e-460c-af7d-2f3b72ce807a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Human.cpp">
@@ -47,5 +59,64 @@
     <ClInclude Include="mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="image\human\do_gakusei_back1.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\do_gakusei_back2.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\do_gakusei_front.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\do_keibi.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_gakusei_1.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_gakusei_2.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_gakusei_arrest.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_keibi_1.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_keibi_2.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_keibi_arrest.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_shuri_1.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\human\left_shuri_2.png">
+      <Filter>Resource Files\image\human</Filter>
+    </Image>
+    <Image Include="image\map\floor.png">
+      <Filter>Resource Files\image\map</Filter>
+    </Image>
+    <Image Include="image\map\step.png">
+      <Filter>Resource Files\image\map</Filter>
+    </Image>
+    <Image Include="image\map\wall.png">
+      <Filter>Resource Files\image\map</Filter>
+    </Image>
+    <Image Include="image\map\window_glass.png">
+      <Filter>Resource Files\image\map</Filter>
+    </Image>
+    <Image Include="image\map\window_glass_broken.png">
+      <Filter>Resource Files\image\map</Filter>
+    </Image>
+    <Image Include="image\title\dispS.png">
+      <Filter>Resource Files\image\title</Filter>
+    </Image>
+    <Image Include="image\title\title.png">
+      <Filter>Resource Files\image\title</Filter>
+    </Image>
   </ItemGroup>
 </Project>

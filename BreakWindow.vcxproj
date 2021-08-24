@@ -32,6 +32,27 @@
     <ClInclude Include="Title.h" />
     <ClInclude Include="Value.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="image\human\do_gakusei_back1.png" />
+    <Image Include="image\human\do_gakusei_back2.png" />
+    <Image Include="image\human\do_gakusei_front.png" />
+    <Image Include="image\human\do_keibi.png" />
+    <Image Include="image\human\left_gakusei_1.png" />
+    <Image Include="image\human\left_gakusei_2.png" />
+    <Image Include="image\human\left_gakusei_arrest.png" />
+    <Image Include="image\human\left_keibi_1.png" />
+    <Image Include="image\human\left_keibi_2.png" />
+    <Image Include="image\human\left_keibi_arrest.png" />
+    <Image Include="image\human\left_shuri_1.png" />
+    <Image Include="image\human\left_shuri_2.png" />
+    <Image Include="image\map\floor.png" />
+    <Image Include="image\map\step.png" />
+    <Image Include="image\map\wall.png" />
+    <Image Include="image\map\window_glass.png" />
+    <Image Include="image\map\window_glass_broken.png" />
+    <Image Include="image\title\dispS.png" />
+    <Image Include="image\title\title.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
