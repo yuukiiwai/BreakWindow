@@ -190,6 +190,14 @@ void player_calc() {
 
 }
 
+void keibi_G() {
+
+}
+
+void keibi_calc() {
+
+}
+
 void shuri_G() {
 	int i;
 	for (i = 0; i < shuri_num; i++) {
